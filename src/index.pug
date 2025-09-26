@@ -1,0 +1,21 @@
+div
+  div(plug="layout")
+    .pdl-layout
+      div(data-type="layout")
+        .pdl-cell(data-name="view")
+        .pdl-cell(data-name="axis") &nbsp;
+        .pdl-cell(data-name="legend") &nbsp;
+      div(data-type="render")
+
+  style(type="text/css"): :stylus
+    g[data-name=axis] { font-size: 11px }
+    .pdl-layout > div[data-type=layout]
+      display: grid
+      grid-template-columns: 1fr fit-content(10em)
+      grid-template-rows: 1fr fit-content(1em)
+      & > .pdl-cell[data-name=legend]
+        grid-column: 2
+        grid-row: 1 / span 2
+        padding-left: 1em
+
+  script(type="@plotdb/block"): include:lsc index.ls

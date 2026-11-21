@@ -103,13 +103,13 @@ mod = ({context, t}) ->
   config: {
     xaxis: JSON.parse(JSON.stringify(chart.utils.config.preset.axis))
   } <<< chart.utils.config.preset.default <<<
-    top: type: \number, default: 10, min: 1, max: 50, step: 1
+    top: type: \number, default: 10, min: 1, max: 50, step: 1, desc: {en: "how many of the top-ranked bars are shown at a time", "zh-TW": "同時顯示前幾名的長條"}
     # 每一格 ( 一個 order ) 播放的時間, ms
-    duration: type: \number, default: 1000, min: 100, max: 10000, step: 100
-    autoplay: type: \boolean, default: true
-    loop: type: \boolean, default: true
-    gap: type: \number, default: 2, min: 0, max: 20, step: 1
-    label: format: type: \format, default: \.3s
+    duration: type: \number, default: 1000, min: 100, max: 10000, step: 100, desc: {en: "playing time of each order step ( ms )", "zh-TW": "每個順序 ( 一格 ) 播放的時間 ( 毫秒 )"}
+    autoplay: type: \boolean, default: true, desc: {en: "play through the orders automatically; off holds the current frame ( the first order when loaded )", "zh-TW": "自動依序播放；關掉時停在目前這一格 ( 剛載入時是第一格 )"}
+    loop: type: \boolean, default: true, desc: {en: "start over after the last order; off stops on the last one", "zh-TW": "播完最後一格後從頭再播；關掉時停在最後一格"}
+    gap: type: \number, default: 2, min: 0, max: 20, step: 1, desc: {en: "space between bars ( px )", "zh-TW": "長條之間的間距 ( px )"}
+    label: format: type: \format, default: \.3s, desc: {en: "number format of the values shown next to the bars, e.g. .3s ( d3-format )", "zh-TW": "長條旁數值的格式，例如 .3s ( d3-format )"}
   dimension:
     order: {type: \O, name: "order", priority: 1}
     value: {type: \R, name: "value", priority: 2}

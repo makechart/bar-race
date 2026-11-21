@@ -1,5 +1,10 @@
 # Change Logs
 
+## v0.0.3
+
+ - add `desc` ( en / zh-TW ) to the config items, shown under the label in the makechart style panel
+
+
 ## v0.0.2
 
  - rewrite: it couldn't run before. bars and ranks interpolate between adjacent orders by a playhead,

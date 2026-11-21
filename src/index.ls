@@ -110,6 +110,8 @@ mod = ({context, t}) ->
     loop: type: \boolean, default: true, desc: {en: "start over after the last order; off stops on the last one", "zh-TW": "播完最後一格後從頭再播；關掉時停在最後一格"}
     gap: type: \number, default: 2, min: 0, max: 20, step: 1, desc: {en: "space between bars ( px )", "zh-TW": "長條之間的間距 ( px )"}
     label: format: type: \format, default: \.3s, desc: {en: "number format of the values shown next to the bars, e.g. .3s ( d3-format )", "zh-TW": "長條旁數值的格式，例如 .3s ( d3-format )"}
+  # 段落 ( tab ) 的說明, key 是段落的路徑. preset 的段落由 chart.utils.config.tabinfo 掛上來, 共用的 common 與各處的 font 段落由核心補
+  tabinfo: chart.utils.config.tabinfo({xaxis: \axis, label: \label})
   dimension:
     order: {type: \O, name: "order", priority: 1}
     value: {type: \R, name: "value", priority: 2}
